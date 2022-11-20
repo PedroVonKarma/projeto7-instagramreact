@@ -1,9 +1,18 @@
+import React from "react"
 import Sugestoes from "./Sugestoes"
 import Usuario from "./Usuario"
 export default function SideBar() {
+    const [nombre, setNombre] = React.useState('Catana')
+    const [imaje, setImaje] = React.useState("assets/img/catanacomics.svg")
+    function alterarU(){
+        setNombre(prompt('Digite seu novo nome de usuário'))
+    }
+    function alterarI(){
+        setImaje(prompt('Insira o URL da sua nova foto de perfil'))
+    }
     return (
         <div class="sidebar">
-            <Usuario nick='Catana' img="assets/img/catanacomics.svg"/>
+            <Usuario fun={alterarU} funi={alterarI} nick={nombre} img={imaje}/>
 
             <Sugestoes />
 
