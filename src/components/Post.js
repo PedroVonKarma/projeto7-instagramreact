@@ -25,9 +25,10 @@ export default function Post(props){
             setCur(nCur+1)
         }
     }
+
     
     return(
-        <div class="post">
+        <div data-test='post' class="post">
                         <div class="topo">
                             <div class="usuario">
                                 <img src={props.imgu} />
@@ -39,25 +40,25 @@ export default function Post(props){
                         </div>
 
                         <div class="conteudo">
-                            <img onClick={like} src={props.conteudo} />
+                            <img data-test='post-image' onClick={like} src={props.conteudo} />
                         </div>
 
                         <div class="fundo">
                             <div class="acoes">
                                 <div>
-                                    <ion-icon onClick={liker} name={heart}></ion-icon>
+                                    <ion-icon data-test='like-post' onClick={liker} name={heart}></ion-icon>
                                     <ion-icon name="chatbubble-outline"></ion-icon>
                                     <ion-icon name="paper-plane-outline"></ion-icon>
                                 </div>
                                 <div>
-                                    <ion-icon onClick={salvar} name={book}></ion-icon>
+                                    <ion-icon data-test='save-post' onClick={salvar} name={book}></ion-icon>
                                 </div>
                             </div>
 
                             <div class="curtidas">
                                 <img src={props.imgc} />
                                 <div class="texto">
-                                Curtido por <strong>{props.cur}</strong> e <strong>outras {nCur} pessoas</strong>
+                                Curtido por <strong>{props.cur}</strong> e <strong>outras <span data-test='likes-number'>{nCur.toLocaleString('pt-BR')}</span> pessoas</strong>
                                 </div>
                             </div>
                         </div>
