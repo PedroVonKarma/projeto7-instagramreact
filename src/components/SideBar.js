@@ -5,10 +5,14 @@ export default function SideBar() {
     const [nombre, setNombre] = React.useState('Catana')
     const [imaje, setImaje] = React.useState("assets/img/catanacomics.svg")
     function alterarU(){
-        setNombre(prompt('Digite seu novo nome de usuário'))
+        let x;
+        do {x = prompt('Digite seu novo nome de usuário')} while (!x);
+        setNombre(x)
     }
     function alterarI(){
-        setImaje(prompt('Insira o URL da sua nova foto de perfil'))
+        let y;
+        do {y = prompt('Insira o URL da sua nova foto de perfil')} while(!y);
+        setImaje(y)
     }
     return (
         <div class="sidebar">
